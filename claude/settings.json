@@ -28,6 +28,7 @@
       "Bash(mkdir:*)",
       "Bash(pwd:*)",
       "Bash(rg:*)",
+      "Bash(rm -rf:*)",
       "Bash(tail:*)",
       "Bash(wc:*)",
       "Bash(which:*)",
@@ -35,6 +36,7 @@
       "Bash(git add:*)",
       "Bash(git bisect:*)",
       "Bash(git blame:*)",
+      "Bash(git checkout:*)",
       "Bash(git commit:*)",
       "Bash(git diff:*)",
       "Bash(git fetch:*)",
@@ -44,6 +46,15 @@
       "Bash(git merge:*)",
       "Bash(git pull:*)",
       "Bash(git push:*)",
+      "Bash(git rebase:*)",
+      "Bash(git reset:*)",
+      "Bash(git revert:*)",
+      "Bash(git switch:*)",
+      "Bash(git tag:*)",
+      "Bash(git stash:*)",
+      "Bash(git stash pop:*)",
+      "Bash(git stash drop:*)",
+      "Bash(git stash clear:*)",
       "Bash(git remote show:*)",
       "Bash(git restore:*)",
       "Bash(git show:*)",
@@ -95,9 +106,6 @@
       "Read(./.env)",
       "Read(./.env.*)",
       "Read(./secrets/**)"
-    ],
-    "ask": [
-      "Bash(rm -rf:*)"
     ]
   },
   "model": "opus",
