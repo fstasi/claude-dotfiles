@@ -1,6 +1,10 @@
 {
   "includeCoAuthoredBy": false,
   "permissions": {
+    "allowedDirectories": [
+      "/Users/francesco.stasi/go/src/github.com/DataDog",
+      "/Users/francesco.stasi/dd"
+    ],
     "allow": [
       "Read",
       "Edit",
