@@ -61,7 +61,9 @@
     ],
     "allowedDirectories": [
       "/Users/francesco.stasi/go/src/github.com/DataDog",
-      "/Users/francesco.stasi/dd"
+      "/Users/francesco.stasi/dd",
+      "/Users/francesco.stasi/dotfiles",
+      "/Users/francesco.stasi/"
     ]
   },
   "model": "opus",
