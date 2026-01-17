@@ -72,4 +72,4 @@ Additional steps for **dd-source**:
 
 1. Monitor CI via `/user:monitor-ci` until all jobs pass
 2. When CI is green, prompt user about E2E testing
-3. If E2E is requested, invoke `/user:e2e-dd-source`
+3. If E2E is requested, invoke `/user:dd-source`
