@@ -2,40 +2,58 @@
 
 When the user asks to work on a Jira issue, immediately invoke `/work-jira <issue>` using the Skill tool.
 
-**Detect this intent when the user's request:**
+**Detect this intent when:**
 - Contains "work on" + a Jira/Atlassian URL (e.g., `https://datadoghq.atlassian.net/browse/SXS-1227`)
-- Contains "work on" + a Jira issue ID pattern (uppercase letters + hyphen + numbers, e.g., `SXS-1227`, `PROJ-123`, `ABC-1`)
-- Contains phrases like "work on jira", "work on jira issue", "work on ticket"
-- Otherwise indicates intent to start working on a Jira ticket
+- Contains "work on" + a Jira issue ID (e.g., `SXS-1227`, `PROJ-123`, `ABC-1`)
+- Contains phrases like "work on jira", "work on ticket", "start on issue"
 
-**Action:** Extract the issue ID or full URL and invoke:
-```
-/work-jira <extracted-issue-id-or-url>
-```
+**Action:** Extract the issue ID or URL and invoke `/work-jira <issue>` directly.
 
-Do not ask for confirmation - invoke the command directly when the pattern is detected.
+## Available Skills
+
+| Skill | Description |
+|-------|-------------|
+| `/user:git-rules` | Git conventions for commits and rebasing |
+| `/user:work-jira` | Full Jira issue workflow |
+| `/user:monitor-ci` | Monitor CI and fix failures |
+| `/user:create-pr` | Create PR with team conventions |
+| `/user:e2e-dd-source` | E2E testing for dd-source |
 
 ## Git Rules
 
 See `/user:git-rules` for commit conventions and rebasing rules.
 
-## Monitor PRs CI Output
+## CI Monitoring
 
-See `/user:monitor-ci` for the full workflow.
+See `/user:monitor-ci` for the CI monitoring and auto-fix workflow.
 
-## PR Workflow
+## PR Creation
 
-See `/user:create-pr` for the full workflow (includes extra rules for web-ui repo).
+See `/user:create-pr` for the full workflow (includes extra rules for web-ui and dd-source repos).
 
-## Rules for working in dd-source repo
-The following rules apply to changes happening in the search-experience domain
+## dd-source Repository Rules
 
+These rules apply to changes in the search-experience domain:
 
-When asked to work on a service (such as entity service, or logs service) you might want to consider changes to both the specific worker (such as entities-search-worker) and  search-router.
+### Service Changes
+When working on a service (entity service, logs service, etc.), consider changes to both:
+- The specific worker (e.g., `entities-search-worker`)
+- The `search-router`
 
-When updating the proto use this command to update the go files: bzl run //:snapshot -- domains/search_experiences/...
+### Proto Updates
+After updating proto files, regenerate Go code:
+```bash
+bzl run //:snapshot -- domains/search_experiences/...
+```
 
-When updating imports you can use the following command to update bzl files: bzl run //:gazelle
+### Import Updates
+After updating imports, regenerate bzl files:
+```bash
+bzl run //:gazelle
+```
 
-Always update and run tests, when possible.
-To run tests use the following command bzl test domains/search_experiences/...
+### Testing
+Always run tests when possible:
+```bash
+bzl test domains/search_experiences/...
+```
