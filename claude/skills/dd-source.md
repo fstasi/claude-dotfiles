@@ -7,10 +7,6 @@ trigger:
     description: Loaded when working in dd-source repo
   - pattern: "search.experience"
     description: Loaded for search-experience domain work
-  - pattern: "entities.*worker"
-    description: Loaded for entity service work
-  - pattern: "search.router"
-    description: Loaded for search-router work
   - pattern: "e2e.*(test|staging)"
     description: Invoked for E2E testing
   - pattern: "test.*(staging|integrate)"
