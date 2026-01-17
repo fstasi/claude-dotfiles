@@ -70,8 +70,7 @@ Once approved:
 ## Step 7: Monitor CI
 
 After PR creation:
-1. Spawn async subagent to monitor CI via `/user:monitor-ci`
-2. Fix failures using `dd:ci:fix` skill
-3. Push fixes and re-monitor until CI passes
+1. Spawn async subagent to monitor CI and fix issues using `/user:monitor-ci` skill
+2. Push fixes and re-monitor until CI passes
 
 Return the PR URL when complete.
