@@ -1,11 +1,6 @@
 ---
+name: workflow-jira
 description: Work on a Jira issue - setup worktree, plan, implement, commit, push, and create PR
-priority: 1
-user-invocable: true
-allowed-tools: Bash(tmp-worktree:*), Bash(git add:*), Bash(git commit:*), Bash(git push:*), Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(gh pr create:*), mcp__plugin_atlassian-remote-mcp_atlassian-remote__getJiraIssue, mcp__atlassian-remote__getJiraIssue
-trigger:
-  - pattern: "work on .*(jira|ticket|issue|SXS-|PROJ-|datadoghq.atlassian.net)"
-    description: Automatically invoked when user wants to work on a Jira issue
 ---
 
 ## Input
@@ -59,18 +54,23 @@ Enter **plan mode** to:
 Once approved:
 1. Implement all planned changes
 2. Run relevant tests
-3. Follow project conventions from `/user:git-rules`
+3. Follow git conventions (gitmoji format, concise messages)
 
-## Step 6: Commit, Push, and Create PR
+## Step 6: Commit and Push
 
-1. **Commit**: Use gitmoji format per `/user:git-rules`
-2. **Push**: Push branch to remote
-3. **Create PR**: Follow `/user:create-pr` conventions
+1. **Review changes**: Run `git status` and `git diff`
+2. **Commit**: Use gitmoji format (e.g., `✨ add feature`, `🐛 fix bug`)
+3. **Push**: Push branch to remote with `git push -u origin <branch-name>`
 
-## Step 7: Monitor CI
+## Step 7: Create PR
 
-After PR creation:
-1. Spawn async subagent to monitor CI and fix issues using `/user:monitor-ci` skill
-2. Push fixes and re-monitor until CI passes
+Create PR following team conventions:
+- **Title format**: `[<jira-issue-number>] <jira issue title>`
+- **Description**: Include summary, Jira link, and note about Claude-generated implementation
+- Use `gh pr create` with proper formatting
+
+## Step 8: CI Monitoring
+
+After PR creation, CI checks will run automatically. Monitor and fix any failures as needed.
 
 Return the PR URL when complete.

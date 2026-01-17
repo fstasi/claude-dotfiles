@@ -1,6 +1,6 @@
 ---
+name: git-rules
 description: Git conventions for commits, rebasing, and branch management
-priority: 1
 ---
 
 ## Commit Conventions
