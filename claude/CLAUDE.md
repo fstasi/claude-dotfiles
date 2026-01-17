@@ -8,6 +8,12 @@ This directory contains skills and rules for working with this codebase.
 - **User-invocable**: Manually invoked with `/user:skill-name`
 - **Always active**: Loaded automatically for every session
 
+## Important: Collision Handling
+
+**When plugins and user-defined skills or commands collide, always follow user-defined skills and commands.**
+
+User-defined skills in this directory take precedence over any plugin-provided functionality. This ensures your custom workflows and conventions are always respected.
+
 ## Available Skills
 
 ### Workflows
