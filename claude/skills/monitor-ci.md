@@ -29,7 +29,7 @@ When CI fails:
 
 1. **Analyze**: Review failure logs to understand the root cause
 2. **Fix**: Use `dd:ci:fix` skill to implement fixes in the main agent
-3. **Commit & Push**: Commit fixes with gitmoji (e.g., `🐛 fix type error in component`)
+3. **Commit & Push**: follow /user:git-rules commit conventions
 4. **Re-monitor**: Restart monitoring to verify fixes
 
 ### 4. Success Criteria
