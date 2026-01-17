@@ -1,35 +1,12 @@
-## Jira Issue Workflow
-
-When the user asks to work on a Jira issue, immediately invoke `/work-jira <issue>` using the Skill tool.
-
-**Detect this intent when:**
-- Contains "work on" + a Jira/Atlassian URL (e.g., `https://datadoghq.atlassian.net/browse/SXS-1227`)
-- Contains "work on" + a Jira issue ID (e.g., `SXS-1227`, `PROJ-123`, `ABC-1`)
-- Contains phrases like "work on jira", "work on ticket", "start on issue"
-
-**Action:** Extract the issue ID or URL and invoke `/work-jira <issue>` directly.
-
 ## Available Skills
 
 | Skill | Description |
 |-------|-------------|
 | `/user:git-rules` | Git conventions for commits and rebasing |
-| `/user:work-jira` | Full Jira issue workflow |
-| `/user:monitor-ci` | Monitor CI and fix failures |
-| `/user:create-pr` | Create PR with team conventions |
-| `/user:e2e-dd-source` | E2E testing for dd-source |
-
-## Git Rules
-
-See `/user:git-rules` for commit conventions and rebasing rules.
-
-## CI Monitoring
-
-See `/user:monitor-ci` for the CI monitoring and auto-fix workflow.
-
-## PR Creation
-
-See `/user:create-pr` for the full workflow (includes extra rules for web-ui and dd-source repos).
+| `/user:work-jira` | Full Jira issue workflow (auto-triggered) |
+| `/user:monitor-ci` | Monitor CI and fix failures (auto-triggered) |
+| `/user:create-pr` | Create PR with team conventions (auto-triggered) |
+| `/user:e2e-dd-source` | E2E testing for dd-source (auto-triggered) |
 
 ## dd-source Repository Rules
 
