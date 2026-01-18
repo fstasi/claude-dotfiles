@@ -2,12 +2,6 @@
 
 This directory contains skills and rules for working with any codebase.
 
-## How Skills Work
-
-- **Auto-triggered**: Loaded when patterns match your request or repository context
-- **User-invocable**: Manually invoked with `/user:skill-name`
-- **Always active**: Loaded automatically for every session
-
 ## ⚠️ CRITICAL: Skill Precedence Rules ⚠️
 
 **YOU MUST ALWAYS FOLLOW THE SKILLS DEFINED IN THIS DIRECTORY.**
