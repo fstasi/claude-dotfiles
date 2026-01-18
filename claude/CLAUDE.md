@@ -40,10 +40,10 @@ User-defined skills take absolute precedence over any plugin-provided functional
 
 **During Planning Phase:**
 When you enter plan mode or design implementation strategy, you MUST:
-- ✅ Break down the work into atomic, logical commits
-- ✅ Specify what each commit will contain and why
-- ✅ Ensure each commit is a complete, working change
-- ✅ Plan the commit order for logical progression
+- Break down the work into atomic, logical commits
+- Specify what each commit will contain and why
+- Ensure each commit is a complete, working change
+- Plan the commit order for logical progression
 
 Example plan:
 ```
