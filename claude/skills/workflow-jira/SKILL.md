@@ -24,8 +24,8 @@ tmp-worktree <issue-id>
 Wait for completion and note the new worktree directory path.
 
 **Ask user**: Do you want to rebase on the base branch?
-- For **web-ui** repo: rebase on `preprod`
-- For other repos: rebase on `main`
+- Check repository-specific skills (e.g., repo-web-ui-rules, repo-dd-source-rules) for the correct base branch
+- Default: rebase on `main`
 
 ## Step 3: Fetch Jira Ticket Details
 
@@ -45,9 +45,12 @@ Enter **plan mode** to:
 1. Analyze ticket requirements against the codebase
 2. Explore relevant code areas
 3. Design the implementation approach
-4. Present a clear, actionable plan
+4. **Break down into ATOMIC COMMITS** - plan each logical change as a separate commit
+5. Present a clear, actionable plan with commit-by-commit breakdown
 
-**Important**: Note any ticket-specific instructions about commits, PR format, or testing.
+**Important**:
+- MANDATORY: Plan must include atomic commit breakdown (one logical change per commit)
+- Note any ticket-specific instructions about commits, PR format, or testing
 
 ## Step 5: Implement (After User Approval)
 
@@ -58,16 +61,22 @@ Once approved:
 
 ## Step 6: Commit and Push
 
+**CRITICAL: Follow the atomic commit plan from Step 4**
+
 1. **Review changes**: Run `git status` and `git diff`
-2. **Commit**: Use gitmoji format (e.g., `✨ add feature`, `🐛 fix bug`)
+2. **Commit atomically**: Create separate commits for each logical change as planned
+   - Use gitmoji format (e.g., `✨ add feature`, `🐛 fix bug`)
+   - Each commit should be independently reviewable and revertable
+   - Never mix unrelated changes in a single commit
 3. **Push**: Push branch to remote with `git push -u origin <branch-name>`
 
 ## Step 7: Create PR
 
-Create PR following team conventions:
+Create a **draft PR** following team conventions:
 - **Title format**: `[<jira-issue-number>] <jira issue title>`
 - **Description**: Include summary, Jira link, and note about Claude-generated implementation
-- Use `gh pr create` with proper formatting
+- Use `gh pr create --draft` with proper formatting
+- Repository-specific rules (e.g., static hash for web-ui) will be applied automatically
 
 ## Step 8: CI Monitoring
 

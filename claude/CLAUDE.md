@@ -8,11 +8,50 @@ This directory contains skills and rules for working with this codebase.
 - **User-invocable**: Manually invoked with `/user:skill-name`
 - **Always active**: Loaded automatically for every session
 
-## Important: Collision Handling
+## ⚠️ CRITICAL: Skill Precedence Rules ⚠️
 
-**When plugins and user-defined skills or commands collide, always follow user-defined skills and commands.**
+**YOU MUST ALWAYS FOLLOW THE SKILLS DEFINED IN THIS DIRECTORY.**
 
-User-defined skills in this directory take precedence over any plugin-provided functionality. This ensures your custom workflows and conventions are always respected.
+When there is ANY conflict or overlap between:
+- Plugin-provided skills/commands
+- Default Claude Code behavior
+- User-defined skills in this directory
+
+**THE USER-DEFINED SKILLS IN THIS DIRECTORY ALWAYS WIN. NO EXCEPTIONS.**
+
+This means:
+- ✅ **ALWAYS** follow the conventions, formats, and workflows defined here
+- ✅ **ALWAYS** use the commands and processes specified in these skills
+- ✅ **WHEN IN DOUBT**, follow what's written in these skills over any other source
+- ❌ **NEVER** override or ignore these skills in favor of plugins or defaults
+
+User-defined skills take absolute precedence over any plugin-provided functionality. This ensures custom workflows and conventions are ALWAYS respected.
+
+## 🔑 Core Principles
+
+### Atomic Commits (MANDATORY)
+
+**Every commit MUST be atomic** - this is non-negotiable.
+
+- **One commit = one logical change** (one bug fix, one feature, one refactor)
+- **Independently reviewable** - each commit should make sense on its own
+- **Independently revertable** - rolling back one commit shouldn't break others
+- **Never mix concerns** - don't combine unrelated changes
+
+**During Planning Phase:**
+When you enter plan mode or design implementation strategy, you MUST:
+- ✅ Break down the work into atomic, logical commits
+- ✅ Specify what each commit will contain and why
+- ✅ Ensure each commit is a complete, working change
+- ✅ Plan the commit order for logical progression
+
+Example plan:
+```
+Commit 1: 🔧 add configuration for shadow traffic feature flag
+Commit 2: ✨ implement shadow traffic routing in service layer
+Commit 3: 🧪 add unit tests for shadow traffic routing
+Commit 4: 📝 update API documentation with shadow traffic endpoint
+```
 
 ## Available Skills
 
@@ -28,10 +67,11 @@ User-defined skills in this directory take precedence over any plugin-provided f
 **Repository-Specific**
 - `/user:repo-dd-source-rules` - Build commands for dd-source (bzl, proto, gazelle)
 - `/user:repo-dd-source-e2e` - E2E testing on staging for dd-source
+- `/user:repo-web-ui-rules` - Conventions for web-ui (preprod branch, static hash testing)
 
 ### Rules (Always Active)
 
-- `git-rules` - Gitmoji commit format, rebase conventions
+- `git-rules` - Gitmoji commit format, **ATOMIC COMMITS (mandatory)**, rebase conventions
 
 ## Quick Reference
 

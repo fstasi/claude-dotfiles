@@ -7,8 +7,15 @@ description: Git conventions for commits, rebasing, and branch management
 
 Follow these rules when creating git commits:
 
-1. **Keep messages short and concise** - Focus on the "what" and "why"
-2. **Use gitmoji** - Start commit messages with relevant emoji(s):
+1. **ATOMIC COMMITS ARE MANDATORY** - Each commit must be a single, logical change:
+   - One commit = one purpose (e.g., one bug fix, one feature, one refactor)
+   - Commits should be independently reviewable and revertable
+   - Never mix unrelated changes in a single commit
+   - When planning changes, ALWAYS break them into atomic commits
+
+2. **Keep messages short and concise** - Focus on the "what" and "why"
+
+3. **Use gitmoji** - Start commit messages with relevant emoji(s):
    - ✨ New feature
    - 🐛 Bug fix
    - ♻️ Refactor
@@ -19,8 +26,8 @@ Follow these rules when creating git commits:
    - 🧪 Tests
    - 🔒 Security
 
-3. **Format**: `<gitmoji(s)> <short description>`
-4. **Example**: `✨ add shadow traffic support`
+4. **Format**: `<gitmoji(s)> <short description>`
+5. **Example**: `✨ add shadow traffic support`
 
 ## Rebasing
 
