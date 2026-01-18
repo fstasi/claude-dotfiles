@@ -51,7 +51,6 @@ After approval:
 
 Create **draft PR**:
 - Title: `[<jira-id>] <jira title>`
-- Use `gh pr create --draft`
 
 ## Step 8: Monitor CI
 
