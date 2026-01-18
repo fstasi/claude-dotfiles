@@ -43,9 +43,7 @@ After approval:
 
 ## Step 6: Commit and Push
 
-1. `git status` and `git diff` to review
-2. Commit atomically per plan
-3. `git push -u origin <branch>`
+Commit atomically per plan
 
 ## Step 7: Create PR
 
