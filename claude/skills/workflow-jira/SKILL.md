@@ -78,8 +78,22 @@ Create a **draft PR** following team conventions:
 - Use `gh pr create --draft` with proper formatting
 - Repository-specific rules (e.g., static hash for web-ui) will be applied automatically
 
-## Step 8: CI Monitoring
+## Step 8: Spawn Background Agent for CI Monitoring
 
-After PR creation, CI checks will run automatically. Monitor and fix any failures as needed.
+After PR creation, spawn a background agent to monitor CI:
 
-Return the PR URL when complete.
+**Use the Task tool with:**
+```
+- subagent_type: "general-purpose"
+- run_in_background: true
+- prompt: "Monitor CI for PR <PR-URL>. Follow the workflow-monitor-ci skill. Report back when all checks pass or if any failures occur that need attention."
+```
+
+**Inform the user:**
+```
+"I've spawned a background agent to monitor CI for your PR. It will report back when all checks pass or if any failures occur. You can continue working on other tasks in the meantime."
+```
+
+**Return the PR URL** so the user can view it.
+
+**Continue** - don't wait for CI to complete. The background agent will handle monitoring and report back when needed.

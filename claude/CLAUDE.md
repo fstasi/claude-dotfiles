@@ -45,6 +45,46 @@ Commit 3: 🧪 add unit tests for shadow traffic routing
 Commit 4: 📝 update API documentation with shadow traffic endpoint
 ```
 
+### Background Agents for CI and Testing (MANDATORY)
+
+**CI monitoring and testing jobs MUST run in background agents** - this keeps the main context clean and lean.
+
+**When to Use Background Agents:**
+- **CI Monitoring** - After creating a PR, spawn a background agent to monitor CI
+- **E2E Testing** - When running E2E tests, spawn a background agent
+- **Long-running tests** - Any test suite that takes more than a few seconds
+
+**How to Spawn Background Agents:**
+
+Use the Task tool with `run_in_background: true`:
+
+```
+Task tool with:
+- subagent_type: "general-purpose" (or appropriate type)
+- run_in_background: true
+- prompt: "Monitor CI for PR #123 and report back when done or if failures occur"
+```
+
+**Background Agent Behavior:**
+- Agent runs independently and doesn't block the main conversation
+- Returns an `output_file` path for monitoring progress
+- Main agent can check progress by reading the output file
+- Background agent reports back when:
+  - ✅ Task completes successfully
+  - ❌ Error or failure occurs
+  - ⏱️ User needs to be notified of status
+
+**Main Agent Responsibilities:**
+- Tell the user a background agent has been spawned
+- Provide the output file path if user wants to monitor
+- Continue with other work while background agent runs
+- Check back on background agent periodically if needed
+
+Example:
+```
+"I've spawned a background agent to monitor CI for your PR. It will report back when all checks pass or if any failures occur. You can continue working on other tasks in the meantime."
+```
+
 ## Available Skills
 
 ### Workflows
