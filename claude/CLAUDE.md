@@ -1,6 +1,6 @@
 # Claude Code Configuration
 
-This directory contains skills and rules for working with this codebase.
+This directory contains skills and rules for working with any codebase.
 
 ## How Skills Work
 
