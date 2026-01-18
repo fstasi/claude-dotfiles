@@ -13,15 +13,10 @@ Parse input to extract Jira issue ID:
 - URL `https://datadoghq.atlassian.net/browse/SXS-1227` → `SXS-1227`
 - Direct ID `SXS-1227` → use as-is
 
-## Step 2: Set Up Worktree
+## Step 2: Ask user to rebase
 
-```bash
-tmp-worktree <issue-id>
-```
 
-**Ask user**: Rebase on base branch?
-- Check repo-specific skills for correct base branch
-- Default: `main`
+**Ask user** to rebase on base branch, if there are more than 10 newer commits on remote
 
 ## Step 3: Fetch Jira Ticket
 
