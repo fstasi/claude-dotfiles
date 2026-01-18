@@ -9,21 +9,10 @@ agent: general-purpose
 
 ### 1. Get PR Information
 
-```bash
-gh pr view  # Current branch PR
-gh pr view <number>  # Specific PR
-```
 
 ### 2. Monitor CI Status
 
-Poll CI status using GitHub CLI:
-```bash
-gh pr checks
-```
-
-- ✅ Passing jobs
-- ❌ Failing jobs
-- ⏳ In-progress jobs
+Poll CI status using GitHub CLI
 
 Poll every 30 seconds until all jobs complete.
 
