@@ -2,16 +2,14 @@
 
 This directory contains skills and rules for working with any codebase.
 
-## ⚠️ CRITICAL: Skill Precedence Rules ⚠️
-
-**YOU MUST ALWAYS FOLLOW THE SKILLS DEFINED IN THIS DIRECTORY.**
+## Skill Precedence Rules
 
 When there is ANY conflict or overlap between:
 - Plugin-provided skills/commands
 - Default Claude Code behavior
 - User-defined skills in this directory
 
-**THE USER-DEFINED SKILLS IN THIS DIRECTORY ALWAYS WIN. NO EXCEPTIONS.**
+**THE USER-DEFINED SKILLS ALWAYS WIN. NO EXCEPTIONS.**
 
 This means:
 - **ALWAYS** follow the conventions, formats, and workflows defined here
