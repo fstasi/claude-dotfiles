@@ -18,18 +18,11 @@ Poll every 30 seconds until all jobs complete.
 
 ### 3. Handle Failures
 
-Get failure details:
-```bash
-gh pr checks --watch
-gh run view <run-id>
-```
-
 Report to main agent:
 - Which jobs failed
 - Error messages
 - Suggested fixes if obvious
-
-**Do NOT fix automatically** - report and wait for user decision.
+- Ask user if you can't fix it easily yourself 
 
 ### 4. Report Success
 
