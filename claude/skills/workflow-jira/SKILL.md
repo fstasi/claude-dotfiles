@@ -56,9 +56,5 @@ Create **draft PR**:
 ## Step 8: Monitor CI
 
 Spawn background agent for CI monitoring:
-```
-Task tool: subagent_type="general-purpose", run_in_background=true
-Prompt: "Monitor CI for PR <URL>. Follow workflow-monitor-ci skill."
-```
 
 Return PR URL to user.
