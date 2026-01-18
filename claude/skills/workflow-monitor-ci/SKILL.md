@@ -1,0 +1,54 @@
+---
+name: workflow-monitor-ci
+description: Monitor CI jobs for a PR and fix failures. Run as background agent with Task tool (run_in_background: true).
+---
+
+## Monitor CI Workflow
+
+### 1. Get PR Information
+
+```bash
+gh pr view  # Current branch PR
+gh pr view <number>  # Specific PR
+```
+
+### 2. Monitor CI Status
+
+Poll CI status using GitHub CLI:
+```bash
+gh pr checks
+```
+
+- ✅ Passing jobs
+- ❌ Failing jobs
+- ⏳ In-progress jobs
+
+Poll every 30 seconds until all jobs complete.
+
+### 3. Handle Failures
+
+Get failure details:
+```bash
+gh pr checks --watch
+gh run view <run-id>
+```
+
+Report to main agent:
+- Which jobs failed
+- Error messages
+- Suggested fixes if obvious
+
+**Do NOT fix automatically** - report and wait for user decision.
+
+### 4. Report Success
+
+When all CI jobs pass:
+```
+"✅ All CI checks have passed for PR #<number>!"
+```
+
+### 5. Edge Cases
+
+- **Cancelled**: Report and ask if monitoring should continue
+- **Timeout (>30 min)**: Report current status
+- **Pending checks**: Report which are still pending
