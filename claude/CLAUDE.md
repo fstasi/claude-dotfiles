@@ -20,10 +20,10 @@ When there is ANY conflict or overlap between:
 **THE USER-DEFINED SKILLS IN THIS DIRECTORY ALWAYS WIN. NO EXCEPTIONS.**
 
 This means:
-- ✅ **ALWAYS** follow the conventions, formats, and workflows defined here
-- ✅ **ALWAYS** use the commands and processes specified in these skills
-- ✅ **WHEN IN DOUBT**, follow what's written in these skills over any other source
-- ❌ **NEVER** override or ignore these skills in favor of plugins or defaults
+- **ALWAYS** follow the conventions, formats, and workflows defined here
+- **ALWAYS** use the commands and processes specified in these skills
+- **WHEN IN DOUBT**, follow what's written in these skills over any other source
+- **NEVER** override or ignore these skills in favor of plugins or defaults
 
 User-defined skills take absolute precedence over any plugin-provided functionality. This ensures custom workflows and conventions are ALWAYS respected.
 
