@@ -63,6 +63,7 @@ Commit 4: 📝 update API documentation with shadow traffic endpoint
 ### Rules (Always Active)
 
 - `git-rules` - Gitmoji commit format, **ATOMIC COMMITS (mandatory)**, rebase conventions
+- `/user:workflow-create-pr` - Create PR with team conventions and Jira linking
 
 ## Quick Reference
 
