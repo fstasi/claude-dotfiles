@@ -53,7 +53,6 @@ Commit 4: 📝 update API documentation with shadow traffic endpoint
 - `/user:workflow-jira` - Complete Jira workflow: worktree setup → plan → implement → commit → push → PR
 
 **PR & CI**
-- `/user:workflow-create-pr` - Create PR with team conventions and Jira linking
 - `/user:workflow-monitor-ci` - Monitor CI jobs and fix failures
 
 **Repository-Specific**
