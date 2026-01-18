@@ -1,6 +1,8 @@
 ---
 name: repo-dd-source-e2e
-description: E2E testing for dd-source on staging. Run as background agent with Task tool (run_in_background: true).
+description: E2E testing for dd-source on staging
+context: fork
+agent: general-purpose
 ---
 
 ## E2E Testing Workflow
