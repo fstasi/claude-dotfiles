@@ -1,6 +1,8 @@
 ---
 name: workflow-monitor-ci
-description: Monitor CI jobs for a PR and fix failures. Run as background agent with Task tool (run_in_background: true).
+description: Monitor CI jobs for a PR and report failures
+context: fork
+agent: general-purpose
 ---
 
 ## Monitor CI Workflow
