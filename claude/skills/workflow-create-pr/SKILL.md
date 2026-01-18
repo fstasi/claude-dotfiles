@@ -29,14 +29,7 @@ Use `gh pr create` with heredoc for clean formatting:
 
 ```bash
 gh pr create --draft --title "PR title here" --body "$(cat <<'EOF'
-## Summary
-<summary here>
-
-## Jira
-<jira link>
-
-## Notes
-Implementation by Claude Code following the approved plan.
+<PR description, as described above>
 EOF
 )"
 ```
