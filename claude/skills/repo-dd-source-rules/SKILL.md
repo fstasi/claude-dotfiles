@@ -40,3 +40,7 @@ Full build with tests:
 ```bash
 bzl test domains/search_experiences/...
 ```
+
+### E2E Testing
+
+After CI passes, run E2E tests on staging using `repo-dd-source-e2e`.
