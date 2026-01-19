@@ -37,3 +37,7 @@ EOF
 ### 4. Return PR URL
 
 Display the PR URL to the user when complete.
+
+### 5. Monitor CI
+
+After PR is created, start CI monitoring using `workflow-monitor-ci`.
