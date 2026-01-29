@@ -59,10 +59,11 @@
       "Read(./.env.*)",
       "Read(./secrets/**)"
     ],
-    "allowedDirectories": [
+    "additionalDirectories": [
       "/Users/francesco.stasi/go/src/github.com/DataDog",
       "/Users/francesco.stasi/dd",
       "/Users/francesco.stasi/dotfiles",
+      "/Users/francesco.stasi/worktrees",
       "/Users/francesco.stasi/"
     ]
   },
